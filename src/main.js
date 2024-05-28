@@ -1,2 +1,3 @@
 import './components/hero'
-import './components/input'
+import './components/materiaPrimaForm'
+import './scripts/modal/abrirModal'
