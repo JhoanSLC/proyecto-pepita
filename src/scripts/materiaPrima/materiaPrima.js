@@ -11,5 +11,5 @@ let materiaPrima = {
     "fechaDeAdquisicion" : "",
     "fechaDeVencimiento" : "",
     "ubicacionEnAlmacen" : "",
-    "notasAdicionales"
+    "notasAdicionales" : "",
 }
