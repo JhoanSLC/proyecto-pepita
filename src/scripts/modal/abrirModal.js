@@ -1,8 +1,12 @@
-import '../../components/materiaPrimaForm'
+document.addEventListener('DOMContentLoaded', () => {
 
-let modalButton = document.getElementById('openModalBtn');
-let modal = document.getElementById('myModal');
+    const mpForm = document.querySelector('materia-form');
+    const mpFormShadow = mpForm.shadowRoot;
+    const button = mpFormShadow.getElementById('openModalBtn');
+    const modal = mpFormShadow.getElementById('myModal')
+    
+    button.addEventListener('click', (e) => {
+       modal.style.display = "flex";
+    })
 
-modalButton.addEventListener('click', (e) => {
-    modalButton.style.color = "red"
 })

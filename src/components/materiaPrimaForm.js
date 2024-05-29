@@ -1,5 +1,5 @@
 import { LitElement, html, css } from "lit";
-import './input'
+
 
 export class MateriaPrimaFormulario extends LitElement {
     static properties = {
@@ -22,6 +22,9 @@ export class MateriaPrimaFormulario extends LitElement {
         height: 100%;
         overflow: auto;
         background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro */
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
     }
     .modal-content {
         background-color: #fefefe;
@@ -50,37 +53,62 @@ export class MateriaPrimaFormulario extends LitElement {
         cursor: pointer;
     }
     `
-    changeColor(e) {
-        let button = this.shadowRoot.getElementById('openModalBtn');
-        button.style.color = "red"
+
+
+    closeModal() {
+        let modal = this.shadowRoot.getElementById('myModal');
+
+        modal.style.display = "none"
     }
     
 
     render() {
         return html`
-        <button @click=${this.changeColor} id="openModalBtn">Abrir Modal</button>
+        <button id="openModalBtn">Abrir Modal</button>
         <div id="myModal" class="modal">
             <div class="modal-content">
-                <span class="close">&times;</span>
+                <span @click=${this.closeModal} id="closeModalBtn"class="close">&times;</span>
                 <p>
                     <h2>Formulario Básico</h2>
-                        <form action="https://665630689f970b3b36c49525.mockapi.io/materiaPrima" method="POST" onsubmit="target">
+                        <form id="mpForm" action="https://665630689f970b3b36c49525.mockapi.io/materiaPrima" method="POST">
 
-                            <form-input inputId="" inputText=""></form-input>
-                            <form-input inputId="" inputText=""></form-input>
-                            <form-input inputId="" inputText=""></form-input>
-                            <form-input inputId="" inputText=""></form-input>
-                            <form-input inputId="" inputText=""></form-input>
-                            <form-input inputId="" inputText=""></form-input>
-                            <form-input inputId="" inputText=""></form-input>
-                            <form-input inputId="" inputText=""></form-input>
-                            <form-input inputId="" inputText=""></form-input>
-                            <form-input inputId="" inputText=""></form-input>
-                            <form-input inputId="" inputText=""></form-input>
-                            <form-input inputId="" inputText=""></form-input>
-                            <form-input inputId="" inputText=""></form-input>
-                            <form-input inputId="" inputText=""></form-input>
-
+                            <label for="idmateria">Id Materia Prima:</label>
+                            <input type="number" id="idmateria" name="idMateriaPrima" required><br><br>
+                            
+                            <label for="nombre">nombre</label>
+                            <input type="text" id="nombre" name="nombre" required><br><br>
+            
+                            <label for="Descripcion">Descripcion:</label><br>
+                            <textarea id="descripcion" name="descripcion" rows="4" cols="50" required></textarea><br><br>
+                    
+                            <label for="categoria">Categoria</label>
+                            <input type="text" id="categoria" name="categoria" required><br><br>
+                    
+                            <label for="proveedor">proveedor</label>
+                            <input type="text" id="proveedor" name="proveedor" required><br><br>
+                    
+                            <label for="costoUnidad">Costo por unidad</label>
+                            <input type="number" id="costoUnidad" name="costoUnidad" required><br><br>
+                    
+                            <label for="medida">Unidad de medida</label>
+                            <input type="text" id="medida" name="unidadDeMedida" required><br><br>
+                    
+                            <label for="stock">Cantidad de stock</label>
+                            <input type="number" id="stock" name="stock" required><br><br>
+                    
+                            <label for="fechaIngreso">Fecha de adquisicion</label>
+                            <input type="date" id="fechaIngreso" name="fechaIngreso" required><br><br>
+                    
+                            <label for="vencimiento">Fecha de vencimiento (si aplica)</label>
+                            <input type="date" id="vencimiento" name="fechaVencimiento"><br><br>
+                    
+                            <label for="Ubicacion">Ubicacion en el almacen</label>
+                            <input type="text" id="ubicacion" name="ubicacion" required><br><br>
+                    
+                            <label for="adicional">Notas adicionales</label>
+                            <input type="text" id="adicional" name="adicional" required><br><br>
+                    
+                    
                             <input type="submit" value="Enviar">
                         </form>
                     </h2>
