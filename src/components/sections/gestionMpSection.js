@@ -14,9 +14,7 @@ export class gestionMpSection extends LitElement {
 
         <div class="botones-container">
             <materia-form></materia-form>
-            <materia-form></materia-form>
-            <materia-form></materia-form>
-            <materia-form></materia-form>
+        
         </div>
     </div>
         `

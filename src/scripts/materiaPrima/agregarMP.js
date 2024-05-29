@@ -5,26 +5,28 @@ const URL = "https://665630689f970b3b36c49525.mockapi.io/materiaPrima"
 
 
 document.addEventListener('DOMContentLoaded', () => {
-    const mpFormElement = document.querySelector('materia-form');
-    const shadowRoot = mpFormElement.shadowRoot;
-    const mpForm = shadowRoot.getElementById('mpForm')
+    const gestionSecElement = document.querySelector('gestion-section');
+    const shadowRoot = gestionSecElement.shadowRoot;
+    const mpFormElement = shadowRoot.querySelector('materia-form');
+    const mpFormShadow = mpFormElement.shadowRoot;
+    const mpForm = mpFormShadow.getElementById('mpForm')
     
 
     mpForm.addEventListener('submit', (event) => {
         event.preventDefault();
         let materiaPrima = {
-            "idMateriaPrima" : shadowRoot.getElementById('idmateria').value,
-            "nombre" : shadowRoot.getElementById('nombre').value,
-            "descripcion" : shadowRoot.getElementById('descripcion').value,
-            "categoria" : shadowRoot.getElementById('categoria').value,
-            "proveedor" : shadowRoot.getElementById('proveedor').value,
-            "costoUnidad" : shadowRoot.getElementById('costoUnidad').value,
-            "unidadDeMedida" : shadowRoot.getElementById('medida').value,
-            "stock" : shadowRoot.getElementById('stock').value,
-            "fechaIngreso" : shadowRoot.getElementById('fechaIngreso').value,
-            "fechaVencimiento" : shadowRoot.getElementById('vencimiento').value,
-            "ubicacion" : shadowRoot.getElementById('ubicacion').value,
-            "adicional" : shadowRoot.getElementById('adicional').value,
+            "idMateriaPrima" : mpFormShadow.getElementById('idmateria').value,
+            "nombre" : mpFormShadow.getElementById('nombre').value,
+            "descripcion" : mpFormShadow.getElementById('descripcion').value,
+            "categoria" : mpFormShadow.getElementById('categoria').value,
+            "proveedor" : mpFormShadow.getElementById('proveedor').value,
+            "costoUnidad" : mpFormShadow.getElementById('costoUnidad').value,
+            "unidadDeMedida" : mpFormShadow.getElementById('medida').value,
+            "stock" : mpFormShadow.getElementById('stock').value,
+            "fechaIngreso" : mpFormShadow.getElementById('fechaIngreso').value,
+            "fechaVencimiento" : mpFormShadow.getElementById('vencimiento').value,
+            "ubicacion" : mpFormShadow.getElementById('ubicacion').value,
+            "adicional" : mpFormShadow.getElementById('adicional').value,
         }
 
         enviarDatos(URL, materiaPrima)

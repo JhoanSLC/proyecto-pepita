@@ -7,7 +7,7 @@ export class optionSection extends LitElement {
 
     static styles = css`
         .options-container {
-            display: flex;
+            display: none;
             flex-direction: column;
             align-items: center;
             height: 100%;
