@@ -6,7 +6,7 @@ export class optionSection extends LitElement {
     }
 
     static styles = css`
-        .options-container {
+        #options-container {
             display: none;
             flex-direction: column;
             align-items: center;
@@ -38,7 +38,7 @@ export class optionSection extends LitElement {
 
     render() {
         return html`
-            <div class="options-container">
+            <div id="options-container">
                 <h1>¿A qué sección deseas acceder?</h1>
                 
                 <div class="botones-container">

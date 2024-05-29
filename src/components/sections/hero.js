@@ -6,7 +6,7 @@ export class HeroSection extends LitElement {
     }
 
     static styles = css`
-        .hero-container {
+        #hero-container {
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -28,9 +28,9 @@ export class HeroSection extends LitElement {
 
     render() {
         return html`
-        <div class="hero-container">
+        <div id="hero-container">
             <h1 class="hero-titulo">Confecciones PEPITA</h1>
-            <button @clicktype="button" id="boton-empezar">EMPEZAR</button>
+            <button @click=${this.cambiarSeccion} type="button" id="boton-empezar">EMPEZAR</button>
         </div>
         `
     }

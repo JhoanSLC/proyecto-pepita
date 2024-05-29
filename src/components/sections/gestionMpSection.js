@@ -6,17 +6,23 @@ export class gestionMpSection extends LitElement {
         super();
     }
 
+    static styles = css`
+        #gestionar-mp-container {
+            display: none;
+        }
+    `
+
     render() {
         return html`
-        <div class="gestionar-mp-container">
-        <h1>Gestionar materia prima</h1>
-        <p>Seleccione la opción que desea realizar</p>
+        <div id="gestionar-mp-container">
+            <h1>Gestionar materia prima</h1>
+            <p>Seleccione la opción que desea realizar</p>
 
-        <div class="botones-container">
-            <materia-form></materia-form>
-        
+            <div class="botones-container">
+                <materia-form></materia-form>
+            
+            </div>
         </div>
-    </div>
         `
     }
 }
