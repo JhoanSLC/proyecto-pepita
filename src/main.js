@@ -1,5 +1,6 @@
-import './components/hero'
+import './components/sections/hero'
 import './components/materiaPrimaForm'
 import './scripts/materiaPrima/agregarMP'
 import './scripts/modal/abrirModal'
 import './scripts/modal/cerrarModal'
+import './components/sections/optionsSection'

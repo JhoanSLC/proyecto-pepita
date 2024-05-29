@@ -55,19 +55,12 @@ export class MateriaPrimaFormulario extends LitElement {
     `
 
 
-    closeModal() {
-        let modal = this.shadowRoot.getElementById('myModal');
-
-        modal.style.display = "none"
-    }
-    
-
     render() {
         return html`
         <button id="openModalBtn">Abrir Modal</button>
         <div id="myModal" class="modal">
             <div class="modal-content">
-                <span @click=${this.closeModal} id="closeModalBtn"class="close">&times;</span>
+                <span id="closeModalBtn" class="close">&times;</span>
                 <p>
                     <h2>Formulario Básico</h2>
                         <form id="mpForm" action="https://665630689f970b3b36c49525.mockapi.io/materiaPrima" method="POST">
